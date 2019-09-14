@@ -13,6 +13,7 @@ export class ServerComponent {
     counter = 0;
     isLogin = false;
     userName: string;
+    password: string;
     students: Student[] = [new Student('Bill Gates', 'Computer Science'),
                            new Student('Steve Jobs', 'Computer Science'),
                            new Student('Elon Musk', 'Computer Science')];
@@ -30,13 +31,16 @@ export class ServerComponent {
     }
 
     login() {
-      this.isLogin = true;
+      this.isLogin = 1;
     }
 
     signOut() {
-      this.isLogin = false;
+      this.isLogin = 2;
     }
 
+    return() {
+      this.isLogin = false;
+      }
     // Event Binding
     onUpdateUserName(event: Event) {
       this.userName = (<HTMLInputElement>event.target).value;
